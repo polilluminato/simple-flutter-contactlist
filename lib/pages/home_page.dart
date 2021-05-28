@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-
 import 'package:faker/faker.dart';
-import '../ui/contact_list.dart';
-import '../models/contact.dart';
+import 'package:flutter/material.dart';
+import 'package:simple_flutter_contactlist/models/contact.dart';
+
+import 'package:simple_flutter_contactlist/ui/contact_row.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
+        accentColor: Colors.green[700],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Simple Flutter Contact List'),
@@ -30,47 +31,41 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final int _contactListNumberPeople = 25;
-  var faker = new Faker();
-
-  Future<List<Contact>> _createContactList() async {
-    List<Contact> _list = List<Contact>.empty(growable: true);
-    for (int i = 0; i < _contactListNumberPeople; i++) {
-      Contact thisPerson = new Contact(
-          name: faker.person.firstName(),
-          surname: faker.person.lastName(),
-          phone: '999999',
-          email: faker.internet.email(),
-          address: faker.address.streetAddress(),
-          city: faker.address.city(),
-          username: faker.internet.userName(),
-          prefix: faker.person.prefix());
-      _list.add(thisPerson);
-    }
-    return _list;
-  }
+  final _faker = new Faker();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green[700],
         title: Text(widget.title),
       ),
       body: new Container(
-        child: new FutureBuilder<List<Contact>>(
-          future: _createContactList(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return new Center(
-                child: new CircularProgressIndicator(),
-              );
-            } else {
-              List<Contact> myContactList = snapshot.data ?? [];
-              return new ContactList(
-                contacts: myContactList,
-              );
-            }
+        child: new ListView.separated(
+          separatorBuilder: (BuildContext context, int index) => Padding(
+            padding: const EdgeInsets.only(left: 72),
+            child: Divider(),
+          ),
+          itemCount: _contactListNumberPeople,
+          itemBuilder: (BuildContext context, int index) {
+            
+            Contact _thisPerson = new Contact(
+                name: _faker.person.firstName(),
+                surname: _faker.person.lastName(),
+                phone: '999999',
+                email: _faker.internet.email(),
+                address: _faker.address.streetAddress(),
+                city: _faker.address.city(),
+                username: _faker.internet.userName(),
+                prefix: _faker.person.prefix());
+
+            return new ContactRow(contact: _thisPerson);
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.person_add_alt_1),
       ),
     );
   }
