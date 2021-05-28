@@ -37,18 +37,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[700],
+        actions: [
+          Icon(
+            Icons.search,
+            size: 26,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(
+              Icons.more_vert,
+              size: 26,
+            ),
+          ),
+        ],
+        elevation: 0,
+        backgroundColor: Colors.grey[850],
         title: Text(widget.title),
       ),
       body: new Container(
-        child: new ListView.separated(
-          separatorBuilder: (BuildContext context, int index) => Padding(
-            padding: const EdgeInsets.only(left: 72),
-            child: Divider(),
-          ),
+        child: new ListView.builder(
           itemCount: _contactListNumberPeople,
           itemBuilder: (BuildContext context, int index) {
-            
             Contact _thisPerson = new Contact(
                 name: _faker.person.firstName(),
                 surname: _faker.person.lastName(),
