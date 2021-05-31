@@ -15,7 +15,7 @@ class ContactRow extends StatelessWidget {
           backgroundColor: Colors.transparent,
           radius: 24,
           backgroundImage: NetworkImage(
-              "https://eu.ui-avatars.com/api/?name=${contact.surname}+${contact.name}&background=2f855a&color=fff",
+            "https://eu.ui-avatars.com/api/?name=${contact.surname}+${contact.name}&background=2f855a&color=fff",
               scale: 50),
         ),
       ),
@@ -27,6 +27,10 @@ class ContactRow extends StatelessWidget {
       subtitle: Text(
         "${contact.email}",
         style: TextStyle(color: Colors.white70),
+      ),
+      trailing: Padding(
+        padding: const EdgeInsets.only(right: 24),
+        child: Icon(Icons.phone_outlined,size: 28,),
       ),
     );
   }
