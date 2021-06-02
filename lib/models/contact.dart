@@ -6,7 +6,6 @@ class Contact {
   final String address;
   final String city;
   final String username;
-  final String prefix;
 
   Contact({
     required this.name,
@@ -15,7 +14,6 @@ class Contact {
     required this.email,
     required this.address,
     required this.city,
-    required this.username,
-    required this.prefix,
+    required this.username
   });
 }

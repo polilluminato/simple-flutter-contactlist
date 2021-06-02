@@ -104,7 +104,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       address: _faker.address.streetAddress(),
                       city: _faker.address.city(),
                       username: _faker.internet.userName(),
-                      prefix: _faker.person.prefix());
 
                   return new ContactRow(contact: _thisPerson);
                 })
