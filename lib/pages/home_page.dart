@@ -14,11 +14,13 @@ class MyApp extends StatelessWidget {
       title: 'Simple Flutter Contact List',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[900],
         brightness: Brightness.dark,
         primaryColor: Colors.green,
-        accentColor: Colors.green[700],
+        accentColor: Colors.greenAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 24, color: Colors.white),
           headline6: TextStyle(fontSize: 16, color: Colors.green),
         ),
       ),
@@ -57,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
         elevation: 0,
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
@@ -69,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  SizedBox(width: 20,),
                   FavAvatar(link: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/00/001ccef182d7504961fb1bed6593a58cc5dba110_full.jpg"),
                   FavAvatar(link: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/40/405eb712c10aab48663509ed57163039119e4341_full.jpg"),
                   FavAvatar(link: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/40/40a7ac4651bbbd49866138add9f1d346ca35f423_full.jpg"),
@@ -83,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                   child: Text(
                     "Contacts",
                     style: Theme.of(context).textTheme.headline6,

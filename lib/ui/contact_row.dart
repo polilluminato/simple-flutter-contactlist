@@ -21,7 +21,7 @@ class ContactRow extends StatelessWidget {
       ),
       contentPadding: EdgeInsets.only(top: 6, left: 16, bottom: 6),
       title: Text(
-        "${contact.surname} ${contact.name}",
+        "${contact.name} ${contact.surname}",
         style: TextStyle(color: Colors.white),
       ),
       subtitle: Text(
