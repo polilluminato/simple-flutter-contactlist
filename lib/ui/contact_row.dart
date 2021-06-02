@@ -12,10 +12,13 @@ class ContactRow extends StatelessWidget {
     return ListTile(
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SingleContactPage(contact: this.contact,),
-            ),);
+          context,
+          MaterialPageRoute(
+            builder: (context) => SingleContactPage(
+              contact: this.contact,
+            ),
+          ),
+        );
       },
       leading: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -38,7 +41,10 @@ class ContactRow extends StatelessWidget {
       ),
       trailing: Padding(
         padding: const EdgeInsets.only(right: 24),
-        child: Icon(Icons.phone_outlined,size: 28,),
+        child: Icon(
+          Icons.phone_outlined,
+          size: 28,
+        ),
       ),
     );
   }

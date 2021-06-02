@@ -6,14 +6,15 @@ class Contact {
   final String address;
   final String city;
   final String username;
+  final String avatar;
 
-  Contact({
-    required this.name,
-    required this.surname,
-    required this.phone,
-    required this.email,
-    required this.address,
-    required this.city,
-    required this.username
-  });
+  Contact(
+      {required this.name,
+      required this.surname,
+      required this.phone,
+      required this.email,
+      required this.address,
+      required this.city,
+      required this.username,
+      required this.avatar});
 }

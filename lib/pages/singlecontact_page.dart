@@ -43,13 +43,24 @@ class SingleContactPage extends StatelessWidget {
           SizedBox(
             height: 28,
           ),
-          ContactSingleInfoRow(singleInfo: contact.phone, singleIcon: Icons.phone_outlined,),
-          ContactSingleInfoRow(singleInfo: contact.email, singleIcon: Icons.email_outlined,),
-          ContactSingleInfoRow(singleInfo: "${contact.address},\n${contact.city}", singleIcon: Icons.location_on_outlined,),
-          ContactSingleInfoRow(singleInfo: "@${contact.username}", singleIcon: Icons.person_outline,)
+          ContactSingleInfoRow(
+            singleInfo: contact.phone,
+            singleIcon: Icons.phone_outlined,
+          ),
+          ContactSingleInfoRow(
+            singleInfo: contact.email,
+            singleIcon: Icons.email_outlined,
+          ),
+          ContactSingleInfoRow(
+            singleInfo: "${contact.address},\n${contact.city}",
+            singleIcon: Icons.location_on_outlined,
+          ),
+          ContactSingleInfoRow(
+            singleInfo: "@${contact.username}",
+            singleIcon: Icons.account_circle_outlined,
+          )
         ]),
       ),
     );
   }
 }
-

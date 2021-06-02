@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -129,6 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       address: _faker.address.streetAddress(),
                       city: _faker.address.city(),
                       username: Utils.createUsername(
+                          _contactFirstName, _contactLastName),
+                      avatar: Utils.createAvatarLink(
                           _contactFirstName, _contactLastName));
 
                   return ContactRow(contact: _thisPerson);
