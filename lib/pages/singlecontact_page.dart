@@ -26,9 +26,7 @@ class SingleContactPage extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Colors.transparent,
               radius: 48,
-              backgroundImage: NetworkImage(
-                  "https://eu.ui-avatars.com/api/?name=${contact.name}+${contact.surname}&background=2f855a&color=fff",
-                  scale: 50),
+              backgroundImage: NetworkImage(contact.avatar, scale: 50),
             ),
           ),
           SizedBox(
