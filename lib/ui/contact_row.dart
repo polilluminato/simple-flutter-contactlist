@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:simple_flutter_contactlist/models/contact.dart';
+import 'package:simple_flutter_contactlist/pages/singlecontact_page.dart';
 
 class ContactRow extends StatelessWidget {
-  late final Contact contact;
+  final Contact contact;
 
   ContactRow({required this.contact}) : super();
 
   @override
   Widget build(BuildContext context) {
-    return new ListTile(
+    return ListTile(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SingleContactPage(contact: this.contact,),
+            ),);
+      },
       leading: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 24,
           backgroundImage: NetworkImage(
-            "https://eu.ui-avatars.com/api/?name=${contact.surname}+${contact.name}&background=2f855a&color=fff",
+            "https://eu.ui-avatars.com/api/?name=${contact.name}+${contact.surname}&background=2f855a&color=fff",
               scale: 50),
         ),
       ),
