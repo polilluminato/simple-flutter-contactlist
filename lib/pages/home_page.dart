@@ -7,29 +7,6 @@ import 'package:simple_flutter_contactlist/ui/contact_row.dart';
 import 'package:simple_flutter_contactlist/ui/fav_avatar.dart';
 import 'package:simple_flutter_contactlist/utils/utils.dart' as Utils;
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Simple Flutter Contact List',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey[900],
-        brightness: Brightness.dark,
-        primaryColor: Colors.green,
-        accentColor: Colors.greenAccent,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: TextTheme(
-          headline1: TextStyle(fontSize: 24, color: Colors.white),
-          headline6: TextStyle(fontSize: 16, color: Colors.green),
-        ),
-      ),
-      home: MyHomePage(title: 'Simple Flutter Contact List'),
-    );
-  }
-}
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
