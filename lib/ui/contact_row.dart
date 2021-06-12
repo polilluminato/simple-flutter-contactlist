@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_flutter_contactlist/models/contact.dart';
 import 'package:simple_flutter_contactlist/pages/singlecontact_page.dart';
+import 'package:avatars/avatars.dart';
 
 class ContactRow extends StatelessWidget {
   final Contact contact;
@@ -22,11 +23,9 @@ class ContactRow extends StatelessWidget {
       },
       leading: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          radius: 24,
-          backgroundImage: NetworkImage(contact.avatar, scale: 50),
-        ),
+        child: Avatar(
+            name: '${contact.name} ${contact.surname}',
+            shape: AvatarShape.circle(20)),
       ),
       contentPadding: EdgeInsets.only(top: 6, left: 16, bottom: 6),
       title: Text(

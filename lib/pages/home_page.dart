@@ -98,17 +98,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   String _domainName = _faker.internet.domainName();
 
                   Contact _thisPerson = Contact(
-                      name: _contactFirstName,
-                      surname: _contactLastName,
-                      phone: _faker.phoneNumber.us(),
-                      email: Utils.createEmail(
-                          _contactFirstName, _contactLastName, _domainName),
-                      address: _faker.address.streetAddress(),
-                      city: _faker.address.city(),
-                      username: Utils.createUsername(
-                          _contactFirstName, _contactLastName),
-                      avatar: Utils.createAvatarLink(
-                          _contactFirstName, _contactLastName));
+                    name: _contactFirstName,
+                    surname: _contactLastName,
+                    phone: _faker.phoneNumber.us(),
+                    email: Utils.createEmail(
+                        _contactFirstName, _contactLastName, _domainName),
+                    address: _faker.address.streetAddress(),
+                    city: _faker.address.city(),
+                    username: Utils.createUsername(
+                        _contactFirstName, _contactLastName),
+                  );
 
                   return ContactRow(contact: _thisPerson);
                 })

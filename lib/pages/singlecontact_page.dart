@@ -1,3 +1,4 @@
+import 'package:avatars/avatars.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_flutter_contactlist/models/contact.dart';
 import 'package:simple_flutter_contactlist/ui/contact_singleinfo_row.dart';
@@ -23,11 +24,7 @@ class SingleContactPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(children: [
           Center(
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: 48,
-              backgroundImage: NetworkImage(contact.avatar, scale: 50),
-            ),
+            child: Avatar(name: '${contact.name} ${contact.surname}')
           ),
           SizedBox(
             height: 16,
